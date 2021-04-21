@@ -11,3 +11,4 @@ Derivations for the Myers–Briggs Type Indicator (MBTI) framework
 - https://personalityjunkie.com/the-intp/
 - https://personalityjunkie.com/the-inferior-function/
 - https://www.verywellmind.com/the-myers-briggs-type-indicator-2795583
+- https://www.truity.com/type-relationship-advisor/E/S/F/J/E/N/T/P
