@@ -1,18 +1,16 @@
 {
   "name": "mbti",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "license": "MIT",
   "private": false,
-
   "scripts": {
-    "build": "tsc","test":"jest --verbose"
+    "build": "tsc",
+    "test": "jest --verbose"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
-  
     "jest": "^26.0.1",
-    
     "ts-jest": "^25.3.1",
     "tsc-watch": "^4.2.3",
     "typescript": "^3.9.3"
