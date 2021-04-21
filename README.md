@@ -1,6 +1,7 @@
 # MBTI Framework
 
 [![Test Package](https://github.com/johnb8005/mbti/actions/workflows/yarn.yml/badge.svg)](https://github.com/johnb8005/mbti/actions/workflows/yarn.yml)
+[![Publish](https://github.com/johnb8005/mbti/actions/workflows/publish.yml/badge.svg)](https://github.com/johnb8005/mbti/actions/workflows/publish.yml)
 
 Derivations for the MBTI framework
 
