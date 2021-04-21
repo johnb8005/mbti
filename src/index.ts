@@ -59,6 +59,28 @@ const functionPair = (c: T.CognitiveFunction): T.CognitiveFunction => {
   }
 };
 
+export const getRole = ([_, f1, f2, l]: T.MBTIComponent): T.Role => {
+  /*
+  ['_NT_', 'Analyst'],
+  ['_NF_', 'Diplomat'],
+  ['_S_J', 'Sentinel'],
+  ['_S_P', 'Explorer']
+   */
+
+  if (f1 === T.Function1.N && f2 === T.Function2.T) {
+    return T.Role.Analyst;
+  }
+
+  if (f1 === T.Function1.N && f2 === T.Function2.F) {
+    return T.Role.Diplomat;
+  }
+
+  if (l === T.LifeStyle.J) {
+    return T.Role.Sentinel;
+  }
+  return T.Role.Explorer;
+};
+
 export const toDominant = ([
   a,
   f1,
@@ -122,4 +144,36 @@ export const toTertiary = (mbti: T.MBTIComponent): T.CognitiveFunction => {
 export const toInferior = (mbti: T.MBTIComponent): T.CognitiveFunction => {
   const d = toDominant([mbti[0], mbti[1], mbti[2], mbti[3]]);
   return functionPair(d);
+};
+
+//
+
+export const findRomanticPartners = ([a, f1, f2, l]: T.MBTIComponent): [
+  T.MBTIComponent,
+  T.MBTIComponent
+] => {
+  const targetA: T.Attitude = a === T.Attitude.I ? T.Attitude.E : T.Attitude.I;
+  const targetL: T.LifeStyle =
+    l === T.LifeStyle.P ? T.LifeStyle.J : T.LifeStyle.P;
+
+  const logic12: boolean =
+    (a === T.Attitude.I && l === T.LifeStyle.P) ||
+    (a === T.Attitude.E && l === T.LifeStyle.J);
+
+  const s: T.Function1 = !logic12
+    ? f1
+    : f1 === T.Function1.S
+    ? T.Function1.N
+    : T.Function1.S;
+  const t: T.Function2 = !logic12
+    ? f2 === T.Function2.T
+      ? T.Function2.F
+      : T.Function2.T
+    : f2;
+
+  // results
+  const r1: T.MBTIComponent = [targetA, f1, f2, targetL];
+  const r2: T.MBTIComponent = [targetA, s, t, targetL];
+
+  return [r1, r2];
 };

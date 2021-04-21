@@ -53,3 +53,18 @@ describe("to cognitive function - non dominant", () => {
     expect(I.toInferior(c)).toEqual(matrix[t].inferior);
   });
 });
+
+test("find role", () => {
+  const t = T.MBTI.INTP;
+  const c = I.toComponent(t);
+  expect(I.getRole(c)).toEqual(T.Role.Analyst);
+});
+
+test("find romantic partner", () => {
+  const t = T.MBTI.INTP;
+  const c = I.toComponent(t);
+  expect(I.findRomanticPartners(c)).toEqual([
+    I.toComponent(T.MBTI.ENTJ),
+    I.toComponent(T.MBTI.ESTJ),
+  ]);
+});

@@ -49,3 +49,10 @@ export enum LifeStyle {
   J,
   P,
 }
+
+export enum Role {
+  Analyst,
+  Diplomat,
+  Sentinel,
+  Explorer,
+}
