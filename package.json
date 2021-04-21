@@ -6,7 +6,7 @@
   "private": false,
 
   "scripts": {
-    "build": "tsc","test":"jest"
+    "build": "tsc","test":"jest --verbose"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
