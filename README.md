@@ -1,9 +1,9 @@
-# MBTI Framework
+# Myers–Briggs Type Indicator Framework
 
 [![Test Package](https://github.com/johnb8005/mbti/actions/workflows/yarn.yml/badge.svg)](https://github.com/johnb8005/mbti/actions/workflows/yarn.yml)
 [![Publish](https://github.com/johnb8005/mbti/actions/workflows/publish.yml/badge.svg)](https://github.com/johnb8005/mbti/actions/workflows/publish.yml)
 
-Derivations for the MBTI framework
+Derivations for the Myers–Briggs Type Indicator (MBTI) framework
 
 ## Resources
 
