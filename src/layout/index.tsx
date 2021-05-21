@@ -1,7 +1,8 @@
 import React from "react";
 
 import { Link, BrowserRouter as Router } from "react-router-dom";
-import { menus } from "./link";
+import Footer from "./footer";
+import { menus } from "../link";
 
 const basename = import.meta.env.SNOWPACK_PUBLIC_URL;
 
@@ -38,6 +39,7 @@ function Layout({ children }: { children: any }) {
     <Router basename={basename}>
       {header}
       <div className="container">{children}</div>
+      <Footer />
     </Router>
   );
 }
