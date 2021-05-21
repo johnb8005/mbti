@@ -20,7 +20,7 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
       <p className="float-right">
         <img height={300} src={toImgPath(mbtiId)} />
         <br />
-        <small>
+        <small className="float-right">
           Image from{" "}
           <a href={"https://16personalities.com"}>16Personalities.com</a>
         </small>
@@ -30,19 +30,9 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
         <li>
           Role: <code>{T.Role[role]}</code>
         </li>
-        <li>Cognitive Function: </li>
       </ul>
 
       <h5>Cognitive Functions/Type Dynamics</h5>
-
-      <p>
-        <small>
-          see{" "}
-          <a href="https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Isabel_Myers">
-            <i className="fa fa-link" />
-          </a>
-        </small>
-      </p>
 
       <ul>
         {[
@@ -56,6 +46,15 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
           </li>
         ))}
       </ul>
+
+      <p>
+        <small>
+          see{" "}
+          <a href="https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Isabel_Myers">
+            <i className="fa fa-link" />
+          </a>
+        </small>
+      </p>
 
       <h5>Romantic Partners</h5>
 
