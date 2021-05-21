@@ -68,3 +68,7 @@ test("find romantic partner", () => {
     I.toComponent(T.MBTI.ESTJ),
   ]);
 });
+
+test("from component", () => {
+  expect(I.fromComponent([1, 0, 1, 1])).toEqual(T.MBTI.INTP);
+});

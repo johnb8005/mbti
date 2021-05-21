@@ -38,6 +38,46 @@ export const toComponent = (mbti: T.MBTI): T.MBTIComponent => {
   }
 };
 
+export const fromComponent = (cps: T.MBTIComponent): T.MBTI => {
+  const toInt = ([n1, n2, n3, n4]: [number, number, number, number]): number =>
+    n1 + n2 * 2 + n3 * 4 + n4 * 8;
+
+  switch (toInt(cps)) {
+    case toInt([T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.P]):
+      return T.MBTI.INTP;
+    case toInt([T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.J]):
+      return T.MBTI.INTJ;
+    case toInt([T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.P]):
+      return T.MBTI.INFP;
+    case toInt([T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.J]):
+      return T.MBTI.INFJ;
+    case toInt([T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.P]):
+      return T.MBTI.ISTP;
+    case toInt([T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.J]):
+      return T.MBTI.ISTJ;
+    case toInt([T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.P]):
+      return T.MBTI.ISFP;
+    case toInt([T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.J]):
+      return T.MBTI.ISFJ;
+    case toInt([T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.P]):
+      return T.MBTI.ENTP;
+    case toInt([T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.J]):
+      return T.MBTI.ENTJ;
+    case toInt([T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.P]):
+      return T.MBTI.ENFP;
+    case toInt([T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.J]):
+      return T.MBTI.ENFJ;
+    case toInt([T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.P]):
+      return T.MBTI.ESTP;
+    case toInt([T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.J]):
+      return T.MBTI.ESTJ;
+    case toInt([T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.P]):
+      return T.MBTI.ESFP;
+    case toInt([T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.J]):
+      return T.MBTI.ESFJ;
+  }
+};
+
 const functionPair = (c: T.CognitiveFunction): T.CognitiveFunction => {
   switch (c) {
     case T.CognitiveFunction.Fe:
