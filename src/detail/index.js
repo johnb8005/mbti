@@ -5,7 +5,7 @@ const isMbti = (mbti) => {
   if (isNaN(mbti)) {
     return false;
   }
-  if (mbti < 1 || mbti > 16) {
+  if (mbti < 0 || mbti > 15) {
     return false;
   }
   return true;

@@ -1,77 +1,15 @@
 import * as T from "./type.js";
 export const toComponent = (mbti) => {
-  switch (mbti) {
-    case T.MBTI.INTP:
-      return [T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.P];
-    case T.MBTI.INTJ:
-      return [T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.J];
-    case T.MBTI.INFP:
-      return [T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.P];
-    case T.MBTI.INFJ:
-      return [T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.J];
-    case T.MBTI.ISTP:
-      return [T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.P];
-    case T.MBTI.ISTJ:
-      return [T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.J];
-    case T.MBTI.ISFP:
-      return [T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.P];
-    case T.MBTI.ISFJ:
-      return [T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.J];
-    case T.MBTI.ENTP:
-      return [T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.P];
-    case T.MBTI.ENTJ:
-      return [T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.J];
-    case T.MBTI.ENFP:
-      return [T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.P];
-    case T.MBTI.ENFJ:
-      return [T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.J];
-    case T.MBTI.ESTP:
-      return [T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.P];
-    case T.MBTI.ESTJ:
-      return [T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.J];
-    case T.MBTI.ESFP:
-      return [T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.P];
-    case T.MBTI.ESFJ:
-      return [T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.J];
-  }
+  const re = (i, n, r = []) => {
+    if (n === 0) {
+      return r;
+    }
+    const remainder = i % 2;
+    return re((i - remainder) / 2, n - 1, [remainder, ...r]);
+  };
+  return re(mbti, 4, []);
 };
-export const fromComponent = (cps) => {
-  const toInt = ([n1, n2, n3, n4]) => n1 + n2 * 2 + n3 * 4 + n4 * 8;
-  switch (toInt(cps)) {
-    case toInt([T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.P]):
-      return T.MBTI.INTP;
-    case toInt([T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.J]):
-      return T.MBTI.INTJ;
-    case toInt([T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.P]):
-      return T.MBTI.INFP;
-    case toInt([T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.J]):
-      return T.MBTI.INFJ;
-    case toInt([T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.P]):
-      return T.MBTI.ISTP;
-    case toInt([T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.J]):
-      return T.MBTI.ISTJ;
-    case toInt([T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.P]):
-      return T.MBTI.ISFP;
-    case toInt([T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.J]):
-      return T.MBTI.ISFJ;
-    case toInt([T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.P]):
-      return T.MBTI.ENTP;
-    case toInt([T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.J]):
-      return T.MBTI.ENTJ;
-    case toInt([T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.P]):
-      return T.MBTI.ENFP;
-    case toInt([T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.J]):
-      return T.MBTI.ENFJ;
-    case toInt([T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.P]):
-      return T.MBTI.ESTP;
-    case toInt([T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.J]):
-      return T.MBTI.ESTJ;
-    case toInt([T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.P]):
-      return T.MBTI.ESFP;
-    case toInt([T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.J]):
-      return T.MBTI.ESFJ;
-  }
-};
+export const fromComponent = (cps) => cps[3] + cps[2] * 2 + cps[1] * 4 + cps[0] * 8;
 const functionPair = (c) => {
   switch (c) {
     case T.CognitiveFunction.Fe:
@@ -166,4 +104,29 @@ export const findRomanticPartners = ([a, f1, f2, l]) => {
   const r1 = [targetA, f1, f2, targetL];
   const r2 = [targetA, s, t, targetL];
   return [r1, r2];
+};
+const personalityDBMapping = [
+  [1, T.MBTI.ISTJ],
+  [2, T.MBTI.ESTJ],
+  [3, T.MBTI.ISFJ],
+  [4, T.MBTI.ESFJ],
+  [5, T.MBTI.ESFP],
+  [6, T.MBTI.ISFP],
+  [7, T.MBTI.ESTP],
+  [8, T.MBTI.ISTP],
+  [9, T.MBTI.INFJ],
+  [10, T.MBTI.ENFJ],
+  [11, T.MBTI.INFP],
+  [12, T.MBTI.ENFP],
+  [13, T.MBTI.INTP],
+  [14, T.MBTI.ENTP],
+  [15, T.MBTI.INTJ],
+  [16, T.MBTI.ENTJ]
+];
+export const listToPersonalityDB = (mbti) => {
+  const n = personalityDBMapping.find((x) => x[1] === mbti);
+  if (!n) {
+    throw Error("none found");
+  }
+  return `https://www.personality-database.com/personality_type/${n[0]}`;
 };
