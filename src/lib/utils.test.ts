@@ -72,3 +72,102 @@ test("find romantic partner", () => {
 test("from component", () => {
   expect(I.fromComponent([1, 0, 1, 1])).toEqual(T.MBTI.INTP);
 });
+
+describe("conversion from component to type", () => {
+  test("INTP", () => {
+    const c = I.toComponent(T.MBTI.INTP);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.P].join("-")
+    );
+  });
+  test("INTJ", () => {
+    const c = I.toComponent(T.MBTI.INTJ);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.J].join("-")
+    );
+  });
+  test("INFP", () => {
+    const c = I.toComponent(T.MBTI.INFP);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.P].join("-")
+    );
+  });
+  test("INFJ", () => {
+    const c = I.toComponent(T.MBTI.INFJ);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.J].join("-")
+    );
+  });
+  test("ISTP", () => {
+    const c = I.toComponent(T.MBTI.ISTP);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.P].join("-")
+    );
+  });
+  test("ISTJ", () => {
+    const c = I.toComponent(T.MBTI.ISTJ);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.J].join("-")
+    );
+  });
+  test("ISFP", () => {
+    const c = I.toComponent(T.MBTI.ISFP);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.P].join("-")
+    );
+  });
+  test("ISFJ", () => {
+    const c = I.toComponent(T.MBTI.ISFJ);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.J].join("-")
+    );
+  });
+  test("ENTP", () => {
+    const c = I.toComponent(T.MBTI.ENTP);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.P].join("-")
+    );
+  });
+  test("ENTJ", () => {
+    const c = I.toComponent(T.MBTI.ENTJ);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.J].join("-")
+    );
+  });
+  test("ENFP", () => {
+    const c = I.toComponent(T.MBTI.ENFP);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.P].join("-")
+    );
+  });
+  test("ENFJ", () => {
+    const c = I.toComponent(T.MBTI.ENFJ);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.J].join("-")
+    );
+  });
+  test("ESTP", () => {
+    const c = I.toComponent(T.MBTI.ESTP);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.P].join("-")
+    );
+  });
+  test("ESTJ", () => {
+    const c = I.toComponent(T.MBTI.ESTJ);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.J].join("-")
+    );
+  });
+  test("ESFP", () => {
+    const c = I.toComponent(T.MBTI.ESFP);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.P].join("-")
+    );
+  });
+  test("ESFJ", () => {
+    const c = I.toComponent(T.MBTI.ESFJ);
+    expect(c.join("-")).toEqual(
+      [T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.J].join("-")
+    );
+  });
+});

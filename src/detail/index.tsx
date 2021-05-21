@@ -9,7 +9,7 @@ const isMbti = (mbti: number): mbti is T.MBTI => {
     return false;
   }
 
-  if (mbti < 1 || mbti > 16) {
+  if (mbti < 0 || mbti > 15) {
     return false;
   }
 

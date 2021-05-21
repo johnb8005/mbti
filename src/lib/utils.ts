@@ -2,81 +2,21 @@
 import * as T from "./type";
 
 export const toComponent = (mbti: T.MBTI): T.MBTIComponent => {
-  switch (mbti) {
-    case T.MBTI.INTP:
-      return [T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.P];
-    case T.MBTI.INTJ:
-      return [T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.J];
-    case T.MBTI.INFP:
-      return [T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.P];
-    case T.MBTI.INFJ:
-      return [T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.J];
-    case T.MBTI.ISTP:
-      return [T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.P];
-    case T.MBTI.ISTJ:
-      return [T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.J];
-    case T.MBTI.ISFP:
-      return [T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.P];
-    case T.MBTI.ISFJ:
-      return [T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.J];
-    case T.MBTI.ENTP:
-      return [T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.P];
-    case T.MBTI.ENTJ:
-      return [T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.J];
-    case T.MBTI.ENFP:
-      return [T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.P];
-    case T.MBTI.ENFJ:
-      return [T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.J];
-    case T.MBTI.ESTP:
-      return [T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.P];
-    case T.MBTI.ESTJ:
-      return [T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.J];
-    case T.MBTI.ESFP:
-      return [T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.P];
-    case T.MBTI.ESFJ:
-      return [T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.J];
-  }
+  const re = (i: number, n: number, r: number[] = []) => {
+    if (n === 0) {
+      return r;
+    }
+
+    const remainder = i % 2;
+
+    return re((i - remainder) / 2, n - 1, [remainder, ...r]);
+  };
+
+  return re(mbti, 4, []);
 };
 
-export const fromComponent = (cps: T.MBTIComponent): T.MBTI => {
-  const toInt = ([n1, n2, n3, n4]: [number, number, number, number]): number =>
-    n1 + n2 * 2 + n3 * 4 + n4 * 8;
-
-  switch (toInt(cps)) {
-    case toInt([T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.P]):
-      return T.MBTI.INTP;
-    case toInt([T.Attitude.I, T.Function1.N, T.Function2.T, T.LifeStyle.J]):
-      return T.MBTI.INTJ;
-    case toInt([T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.P]):
-      return T.MBTI.INFP;
-    case toInt([T.Attitude.I, T.Function1.N, T.Function2.F, T.LifeStyle.J]):
-      return T.MBTI.INFJ;
-    case toInt([T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.P]):
-      return T.MBTI.ISTP;
-    case toInt([T.Attitude.I, T.Function1.S, T.Function2.T, T.LifeStyle.J]):
-      return T.MBTI.ISTJ;
-    case toInt([T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.P]):
-      return T.MBTI.ISFP;
-    case toInt([T.Attitude.I, T.Function1.S, T.Function2.F, T.LifeStyle.J]):
-      return T.MBTI.ISFJ;
-    case toInt([T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.P]):
-      return T.MBTI.ENTP;
-    case toInt([T.Attitude.E, T.Function1.N, T.Function2.T, T.LifeStyle.J]):
-      return T.MBTI.ENTJ;
-    case toInt([T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.P]):
-      return T.MBTI.ENFP;
-    case toInt([T.Attitude.E, T.Function1.N, T.Function2.F, T.LifeStyle.J]):
-      return T.MBTI.ENFJ;
-    case toInt([T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.P]):
-      return T.MBTI.ESTP;
-    case toInt([T.Attitude.E, T.Function1.S, T.Function2.T, T.LifeStyle.J]):
-      return T.MBTI.ESTJ;
-    case toInt([T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.P]):
-      return T.MBTI.ESFP;
-    case toInt([T.Attitude.E, T.Function1.S, T.Function2.F, T.LifeStyle.J]):
-      return T.MBTI.ESFJ;
-  }
-};
+export const fromComponent = (cps: T.MBTIComponent): T.MBTI =>
+  cps[3] + cps[2] * 2 + cps[1] * 4 + cps[0] * 8;
 
 const functionPair = (c: T.CognitiveFunction): T.CognitiveFunction => {
   switch (c) {

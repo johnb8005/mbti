@@ -12,22 +12,22 @@ export enum CognitiveFunction {
 export type MBTIComponent = [Attitude, Function1, Function2, LifeStyle];
 
 export enum MBTI {
-  INTP = 1, // cast first item to 1, so the list starts at vs 0
-  INTJ,
-  INFP,
-  INFJ,
-  ISTP,
-  ISTJ,
-  ISFP,
-  ISFJ,
-  ENTP,
-  ENTJ,
-  ENFP,
   ENFJ,
-  ESTP,
-  ESTJ,
-  ESFP,
+  ENFP,
+  ENTJ,
+  ENTP,
   ESFJ,
+  ESFP,
+  ESTJ,
+  ESTP,
+  INFJ,
+  INFP,
+  INTJ,
+  INTP,
+  ISFJ,
+  ISFP,
+  ISTJ,
+  ISTP,
 }
 
 export enum Attitude {
