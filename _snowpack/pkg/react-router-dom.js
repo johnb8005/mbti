@@ -2236,6 +2236,11 @@ function (_React$Component) {
 }(react.Component);
 
 var useContext = react.useContext;
+function useParams() {
+
+  var match = useContext(context).match;
+  return match ? match.params : {};
+}
 
 /**
  * The public API for a <Router> that uses HTML5 history.
@@ -2478,4 +2483,4 @@ var NavLink = forwardRef$1(function (_ref, forwardedRef) {
   });
 });
 
-export { BrowserRouter, Link, Route, Switch };
+export { BrowserRouter, Link, Route, Switch, useParams };
