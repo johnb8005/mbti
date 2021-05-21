@@ -25,7 +25,7 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
         <small>Image from 16Personalities.com</small>
       </p>
 
-      <ul>
+      <ul className={"list list-unstyled"}>
         <li>Role {T.Role[role]}</li>
         <li>
           Cognitive Function: {T.CognitiveFunction[U.toDominant(cps)]},{" "}
@@ -40,7 +40,7 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
 
       <h5>Romantic Partners</h5>
 
-      <ul>
+      <ul className="list-group">
         {U.findRomanticPartners(cps).map((x) => (
           <UIUtils.PersonalitySmallRow mbti={U.fromComponent(x)} />
         ))}
@@ -60,6 +60,10 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
           >
             The Personality Junkie
           </a>
+        </li>
+
+        <li>
+          <a href={U.listToPersonalityDB(mbtiId)}>The Personality DB</a>
         </li>
       </ul>
 

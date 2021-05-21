@@ -157,3 +157,30 @@ export const findRomanticPartners = ([a, f1, f2, l]: T.MBTIComponent): [
 
   return [r1, r2];
 };
+
+const personalityDBMapping: [number, T.MBTI][] = [
+  [1, T.MBTI.ISTJ],
+  [2, T.MBTI.ESTJ],
+  [3, T.MBTI.ISFJ],
+  [4, T.MBTI.ESFJ],
+  [5, T.MBTI.ESFP],
+  [6, T.MBTI.ISFP],
+  [7, T.MBTI.ESTP],
+  [8, T.MBTI.ISTP],
+  [9, T.MBTI.INFJ],
+  [10, T.MBTI.ENFJ],
+  [11, T.MBTI.INFP],
+  [12, T.MBTI.ENFP],
+  [13, T.MBTI.INTP],
+  [14, T.MBTI.ENTP],
+  [15, T.MBTI.INTJ],
+  [16, T.MBTI.ENTJ],
+];
+
+export const listToPersonalityDB = (mbti: T.MBTI): string => {
+  const n = personalityDBMapping.find((x) => x[1] === mbti);
+  if (!n) {
+    throw Error("none found");
+  }
+  return `https://www.personality-database.com/personality_type/${n[0]}`;
+};
