@@ -1,8 +1,9 @@
-import * as __SNOWPACK_ENV__ from '../_snowpack/env.js';
+import * as __SNOWPACK_ENV__ from '../../_snowpack/env.js';
 
-import React from "../_snowpack/pkg/react.js";
-import {Link, BrowserRouter as Router} from "../_snowpack/pkg/react-router-dom.js";
-import {menus} from "./link.js";
+import React from "../../_snowpack/pkg/react.js";
+import {Link, BrowserRouter as Router} from "../../_snowpack/pkg/react-router-dom.js";
+import Footer from "./footer.js";
+import {menus} from "../link.js";
 const basename = __SNOWPACK_ENV__.SNOWPACK_PUBLIC_URL;
 const style = {
   borderTop: "1px solid #e5e5e5",
@@ -29,6 +30,6 @@ function Layout({children}) {
     basename
   }, header, /* @__PURE__ */ React.createElement("div", {
     className: "container"
-  }, children));
+  }, children), /* @__PURE__ */ React.createElement(Footer, null));
 }
 export default Layout;
