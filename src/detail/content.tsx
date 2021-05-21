@@ -86,7 +86,9 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
       </ul>
 
       <p>
-        <Link to={"/"}>Back</Link>
+        <Link to={"/"}>
+          <i className="fa fa-arrow-left"></i> Back to list
+        </Link>
       </p>
     </>
   );

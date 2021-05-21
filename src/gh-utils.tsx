@@ -12,12 +12,4 @@ export const SourceCodeLink = () => {
   );
 };
 
-export const Sha = () => {
-  return (
-    <p>
-      <small>
-        <a href={ghUrlSha}>{sha}</a>
-      </small>
-    </p>
-  );
-};
+export const Sha = () => <a href={ghUrlSha}>{sha}</a>;
