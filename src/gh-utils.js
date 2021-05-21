@@ -11,8 +11,6 @@ export const SourceCodeLink = () => {
     className: "fa fa-link"
   }), " Source Code");
 };
-export const Sha = () => {
-  return /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("small", null, /* @__PURE__ */ React.createElement("a", {
-    href: ghUrlSha
-  }, sha)));
-};
+export const Sha = () => /* @__PURE__ */ React.createElement("a", {
+  href: ghUrlSha
+}, sha);

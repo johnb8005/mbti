@@ -1,4 +1,4 @@
-export const SNOWPACK_PUBLIC_GIT_SHA = "6828702a9538d6356ca1cd56dcd5e19bb1373f63";
+export const SNOWPACK_PUBLIC_GIT_SHA = "26197c9cf2d7f31b51abc7df35aa94ee41d1ecab";
 export const SNOWPACK_PUBLIC_URL = "/mbti";
 export const MODE = "production";
 export const NODE_ENV = "production";

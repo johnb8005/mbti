@@ -40,6 +40,8 @@ const Content = ({mbtiId}) => {
     href: U.listToPersonalityDB(mbtiId)
   }, "The Personality DB"))), /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement(Link, {
     to: "/"
-  }, "Back")));
+  }, /* @__PURE__ */ React.createElement("i", {
+    className: "fa fa-arrow-left"
+  }), " Back to list")));
 };
 export default Content;
