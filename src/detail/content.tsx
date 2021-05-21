@@ -10,32 +10,51 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
   const cps = U.toComponent(mbtiId);
   const role = U.getRole(cps);
   const sPersonality: string = T.MBTI[mbtiId];
-  const imgPath =
-    sPersonality.toLowerCase() + "-" + T.Personality[mbtiId].toLowerCase();
 
   return (
     <>
       <h1>
-        {sPersonality} - {T.Personality[mbtiId]}
+        {sPersonality} <small>{T.Personality[mbtiId]}</small>
       </h1>
 
       <p className="float-right">
         <img height={300} src={toImgPath(mbtiId)} />
         <br />
-        <small>Image from 16Personalities.com</small>
+        <small>
+          Image from{" "}
+          <a href={"https://16personalities.com"}>16Personalities.com</a>
+        </small>
       </p>
 
       <ul className={"list list-unstyled"}>
-        <li>Role {T.Role[role]}</li>
         <li>
-          Cognitive Function: {T.CognitiveFunction[U.toDominant(cps)]},{" "}
-          <small>
-            see{" "}
-            <a href="https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Isabel_Myers">
-              <i className="fa fa-link" />
-            </a>
-          </small>
+          Role: <code>{T.Role[role]}</code>
         </li>
+        <li>Cognitive Function: </li>
+      </ul>
+
+      <h5>Cognitive Functions/Type Dynamics</h5>
+
+      <p>
+        <small>
+          see{" "}
+          <a href="https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Isabel_Myers">
+            <i className="fa fa-link" />
+          </a>
+        </small>
+      </p>
+
+      <ul>
+        {[
+          ["Dominant", U.toDominant(cps)],
+          ["Auxiliary", U.toAuxiliary(cps)],
+          ["Tertiary", U.toTertiary(cps)],
+          ["Inferior", U.toInferior(cps)],
+        ].map(([label, c]) => (
+          <li>
+            {label}: <code>{T.CognitiveFunction[c]}</code>
+          </li>
+        ))}
       </ul>
 
       <h5>Romantic Partners</h5>
