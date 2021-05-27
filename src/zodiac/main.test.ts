@@ -10,3 +10,11 @@ test("zodiacSignToElement", () => {
     T.ZodiacElement.Fire
   );
 });
+
+test("zodiacSignsByElement", () => {
+  expect(M.zodiacSignsByElement(T.ZodiacElement.Fire)).toEqual([
+    T.ZodiacSign.Aries,
+    T.ZodiacSign.Leo,
+    T.ZodiacSign.Sagittarius,
+  ]);
+});

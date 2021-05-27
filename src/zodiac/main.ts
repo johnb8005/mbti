@@ -27,6 +27,7 @@ export const zodiacSignsByElement = (
 ): T.ZodiacSign[] =>
   Object.keys(T.ZodiacSign)
     .filter(
-      (x) => typeof x === "number" && zodiacSignToElement(x) === zodiacElement
+      (x) =>
+        !isNaN(Number(x)) && zodiacSignToElement(Number(x)) === zodiacElement
     )
-    .map((x) => x as any as T.ZodiacSign);
+    .map((x) => Number(x) as T.ZodiacSign);
