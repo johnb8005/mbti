@@ -19,3 +19,9 @@ export enum ZodiacElement {
   Air,
   Water,
 }
+
+export enum Modality {
+  Cardinal,
+  Fixed,
+  Mutable,
+}

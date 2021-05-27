@@ -1,3 +1,4 @@
+//https://en.wikipedia.org/wiki/Astrological_sign
 import * as T from "./type";
 
 export const isEnum =
@@ -22,12 +23,22 @@ export const compatibility = (
   _z: T.ZodiacSign
 ): { zodiacSign: T.ZodiacSign; level: number }[] => [];
 
+export const list: T.ZodiacSign[] = Object.keys(T.ZodiacSign)
+  .filter((x) => !isNaN(Number(x)))
+  .map((x) => Number(x) as T.ZodiacSign);
+
 export const zodiacSignsByElement = (
   zodiacElement: T.ZodiacElement
 ): T.ZodiacSign[] =>
-  Object.keys(T.ZodiacSign)
-    .filter(
-      (x) =>
-        !isNaN(Number(x)) && zodiacSignToElement(Number(x)) === zodiacElement
-    )
-    .map((x) => Number(x) as T.ZodiacSign);
+  list.filter((x) => zodiacSignToElement(x) === zodiacElement);
+
+export const toHouse = (z: T.ZodiacSign): number => z + 1;
+
+/**
+ *
+ * @param z
+ * @returns boolean: positive:true, negative:false
+ */
+export const toPolarity = (z: T.ZodiacSign): boolean => z % 2 === 0;
+
+export const toModality = (z: T.ZodiacSign): T.Modality => z % 3;
