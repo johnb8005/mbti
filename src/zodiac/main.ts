@@ -5,11 +5,11 @@ export const isEnum =
   (e: number): e is A =>
     e >= min || e <= max;
 
-export const isElement = isEnum<T.ZodicaElement>(3);
+export const isElement = isEnum<T.ZodiacElement>(3);
 
 export const isSign = isEnum<T.ZodiacSign>(11);
 
-export const zodiacSignToElement = (z: T.ZodiacSign): T.ZodicaElement => {
+export const zodiacSignToElement = (z: T.ZodiacSign): T.ZodiacElement => {
   const r = z % 4;
   if (!isElement(r)) {
     throw Error("can't match to an element");
@@ -23,7 +23,7 @@ export const compatibility = (
 ): { zodiacSign: T.ZodiacSign; level: number }[] => [];
 
 export const zodiacSignsByElement = (
-  zodiacElement: T.ZodicaElement
+  zodiacElement: T.ZodiacElement
 ): T.ZodiacSign[] =>
   Object.keys(T.ZodiacSign)
     .filter(

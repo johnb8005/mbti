@@ -1,21 +1,21 @@
 export enum ZodiacSign {
-  Aries,
-  Gemini,
-  Sagittarius,
-  Cancer,
-  Virgo,
-  Balance, // wage
-  Scorpion,
-  Verseau,
-  u1,
-  u2,
-  u3,
-  u4,
+  Aries, // belier
+  Taurus, // taureau
+  Gemini, // gemeau
+  Cancer, // cancer
+  Leo, // lion
+  Virgo, // vierge
+  Libra, // balance
+  Scorpio, // scorpion
+  Sagittarius, // sagittaire
+  Capricorn, // capricorne
+  Aquarius, // verseau
+  Pisces, // poisson
 }
 
-export enum ZodicaElement {
-  Water,
-  Air,
+export enum ZodiacElement {
   Fire,
   Earth,
+  Air,
+  Water,
 }

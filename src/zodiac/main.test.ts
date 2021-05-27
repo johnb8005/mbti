@@ -7,6 +7,6 @@ test("compatibility", () => {
 
 test("zodiacSignToElement", () => {
   expect(M.zodiacSignToElement(T.ZodiacSign.Sagittarius)).toEqual(
-    T.ZodicaElement.Fire
+    T.ZodiacElement.Fire
   );
 });
