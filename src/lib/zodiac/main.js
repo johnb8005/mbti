@@ -9,7 +9,6 @@ export const zodiacSignToElement = (z) => {
   }
   return r;
 };
-export const compatibility = (_z) => [];
 export const list = Object.keys(T.ZodiacSign).filter((x) => !isNaN(Number(x))).map((x) => Number(x));
 export const zodiacSignsByElement = (zodiacElement) => list.filter((x) => zodiacSignToElement(x) === zodiacElement);
 export const toHouse = (z) => z + 1;
@@ -96,3 +95,11 @@ export const toUnicode = (t) => {
   }
 };
 export const toOpposite = (z) => (z + 6) % 12;
+export const toTwins = (z) => {
+  const twin1 = (z + 4) % 12;
+  const twin2 = (z + 12 - 4) % 12;
+  return [twin1, twin2];
+};
+export const formatTwins = ([t1, t2]) => {
+  return T.ZodiacSign[t1] + " " + T.ZodiacSign[t2];
+};
