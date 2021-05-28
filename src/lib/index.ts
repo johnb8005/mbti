@@ -1,4 +1,4 @@
-import * as Utils from "./utils";
-import * as Type from "./type";
+export * as Utils from "./utils";
+export * as Type from "./type";
 
-export { Utils, Type };
+export * as Zodiac from "./zodiac";
