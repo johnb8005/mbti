@@ -39,3 +39,9 @@ test("to modality", () => {
   expect(M.toModality(T.ZodiacSign.Libra)).toEqual(T.Modality.Cardinal);
   expect(M.toModality(T.ZodiacSign.Cancer)).toEqual(T.Modality.Cardinal);
 });
+
+test("to degree", () => {
+  expect(M.toDegree(T.ZodiacSign.Cancer)).toEqual(90);
+  expect(M.toDegree(T.ZodiacSign.Libra)).toEqual(180);
+  expect(M.toDegree(T.ZodiacSign.Aquarius)).toEqual(300);
+});

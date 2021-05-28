@@ -42,3 +42,38 @@ export const toHouse = (z: T.ZodiacSign): number => z + 1;
 export const toPolarity = (z: T.ZodiacSign): boolean => z % 2 === 0;
 
 export const toModality = (z: T.ZodiacSign): T.Modality => z % 3;
+
+export const toDegree = (z: T.ZodiacSign): T.Modality => z * 30;
+
+export const toSeason = (z: T.ZodiacSign): T.Modality => z * 30;
+
+export const toUnicode = (t: T.ZodiacSign): string => {
+  switch (t) {
+    case T.ZodiacSign.Aries:
+      return "♈︎";
+    case T.ZodiacSign.Aries:
+      return "♉︎";
+    case T.ZodiacSign.Aries:
+      return "♊︎";
+    case T.ZodiacSign.Aries:
+      return "♋︎";
+    case T.ZodiacSign.Aries:
+      return "♌︎";
+    case T.ZodiacSign.Aries:
+      return "♍︎";
+    case T.ZodiacSign.Aries:
+      return "♎︎";
+    case T.ZodiacSign.Aries:
+      return "♏︎";
+    case T.ZodiacSign.Aries:
+      return "♐︎";
+    case T.ZodiacSign.Aries:
+      return "♑︎";
+    case T.ZodiacSign.Aries:
+      return "♒︎";
+    case T.ZodiacSign.Aries:
+      return "♓︎";
+  }
+
+  throw Error("could not match");
+};
