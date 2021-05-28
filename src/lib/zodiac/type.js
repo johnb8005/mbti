@@ -26,3 +26,10 @@ export var Modality;
   Modality2[Modality2["Fixed"] = 1] = "Fixed";
   Modality2[Modality2["Mutable"] = 2] = "Mutable";
 })(Modality || (Modality = {}));
+export var Season;
+(function(Season2) {
+  Season2[Season2["Spring"] = 0] = "Spring";
+  Season2[Season2["Summer"] = 1] = "Summer";
+  Season2[Season2["Fall"] = 2] = "Fall";
+  Season2[Season2["Winter"] = 3] = "Winter";
+})(Season || (Season = {}));
