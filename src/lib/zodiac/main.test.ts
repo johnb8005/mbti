@@ -41,7 +41,7 @@ test("to modality", () => {
 });
 
 test("to degree", () => {
-  expect(M.toDegree(T.ZodiacSign.Cancer)).toEqual(90);
-  expect(M.toDegree(T.ZodiacSign.Libra)).toEqual(180);
-  expect(M.toDegree(T.ZodiacSign.Aquarius)).toEqual(300);
+  expect(M.toDegreeStart(T.ZodiacSign.Cancer)).toEqual(90);
+  expect(M.toDegreeStart(T.ZodiacSign.Libra)).toEqual(180);
+  expect(M.toDegreeStart(T.ZodiacSign.Aquarius)).toEqual(300);
 });
