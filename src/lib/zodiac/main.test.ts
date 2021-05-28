@@ -2,7 +2,10 @@ import * as M from "./main";
 import * as T from "./type";
 
 test("compatibility", () => {
-  expect(M.compatibility(T.ZodiacSign.Sagittarius)).toEqual([]);
+  expect(M.toTwins(T.ZodiacSign.Sagittarius)).toEqual([
+    T.ZodiacSign.Aries,
+    T.ZodiacSign.Leo,
+  ]);
 });
 
 test("zodiacSignToElement", () => {
