@@ -5,6 +5,8 @@ import Home from "./home";
 import Detail from "./detail/index";
 import Layout from "./layout";
 
+import { links } from "./link";
+
 import Zodiac from "./zodiac";
 
 const basename = import.meta.env.SNOWPACK_PUBLIC_URL;
@@ -21,8 +23,9 @@ export default () => {
       <Layout>
         <Switch>
           <Route exact path={"/"} component={Home} />
+          <Route exact path={links.mbti.link} component={Home} />
           <Route path={"/:mbti/detail"} component={Detail} />
-          <Route path={"/zodiac"} component={Zodiac} />
+          <Route path={links.zodiac.link} component={Zodiac} />
           <Route component={NotFound} />
         </Switch>
       </Layout>

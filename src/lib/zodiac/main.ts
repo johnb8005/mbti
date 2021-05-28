@@ -19,10 +19,6 @@ export const zodiacSignToElement = (z: T.ZodiacSign): T.ZodiacElement => {
   return r;
 };
 
-export const compatibility = (
-  _z: T.ZodiacSign
-): { zodiacSign: T.ZodiacSign; level: number }[] => [];
-
 export const list: T.ZodiacSign[] = Object.keys(T.ZodiacSign)
   .filter((x) => !isNaN(Number(x)))
   .map((x) => Number(x) as T.ZodiacSign);
@@ -137,3 +133,18 @@ export const toUnicode = (t: T.ZodiacSign): string => {
 };
 
 export const toOpposite = (z: T.ZodiacSign): T.ZodiacSign => (z + 6) % 12;
+
+/**
+ * https://www.refinery29.com/en-us/2016/10/127028/horoscope-compatibility-love-match#slide
+ * @param z
+ * @returns get twins (which signs of the same element)
+ */
+export const toTwins = (z: T.ZodiacSign): [T.ZodiacSign, T.ZodiacSign] => {
+  const twin1 = (z + 4) % 12;
+  const twin2 = (z + 12 - 4) % 12;
+  return [twin1, twin2];
+};
+
+export const formatTwins = ([t1, t2]: [T.ZodiacSign, T.ZodiacSign]) => {
+  return T.ZodiacSign[t1] + " " + T.ZodiacSign[t2];
+};

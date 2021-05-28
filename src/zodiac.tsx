@@ -14,9 +14,11 @@ export default () => (
         <th>Polarity</th>
         <th>Modality</th>
         <th>Triplicity</th>
-        <th>Opposite</th>
+
         <th>Northern Season</th>
         <th>Southern Season</th>
+        <th>Opposite</th>
+        <th>Twins</th>
       </tr>
     </thead>
     <tbody>
@@ -30,9 +32,11 @@ export default () => (
           <td>{Z.toPolarity(z) === false ? "Positive" : "Negative"}</td>
           <td>{T.Modality[Z.toModality(z)]}</td>
           <td>{T.ZodiacElement[Z.zodiacSignToElement(z)]}</td>
-          <td>{T.ZodiacSign[Z.toOpposite(z)]}</td>
+
           <td>{T.Season[Z.toSeason(z)]}</td>
           <td>{T.Season[(Z.toSeason(z) + 2) % 3]}</td>
+          <td>{T.ZodiacSign[Z.toOpposite(z)]}</td>
+          <td>{Z.formatTwins(Z.toTwins(z))}</td>
         </tr>
       ))}
     </tbody>
