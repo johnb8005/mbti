@@ -25,3 +25,10 @@ export enum Modality {
   Fixed,
   Mutable,
 }
+
+export enum Season {
+  Spring,
+  Summer,
+  Fall,
+  Winter,
+}
