@@ -7,7 +7,7 @@ import Home from "./home/index.js";
 import Detail from "./detail/index.js";
 import Layout from "./layout/index.js";
 import {links} from "./link.js";
-import Zodiac from "./zodiac.js";
+import Zodiac from "./zodiac/index.js";
 const basename = __SNOWPACK_ENV__.SNOWPACK_PUBLIC_URL;
 const NotFound = () => /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("i", null, "Page Not Found"));
 export default () => {

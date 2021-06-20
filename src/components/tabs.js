@@ -5,6 +5,7 @@ const Nav = (navs) => ({
 }) => /* @__PURE__ */ React.createElement("ul", {
   className: "nav nav-tabs"
 }, navs.map((nav, i) => /* @__PURE__ */ React.createElement("li", {
+  key: i,
   className: "nav-item"
 }, /* @__PURE__ */ React.createElement("a", {
   onClick: () => onClick(i),

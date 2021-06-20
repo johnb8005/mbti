@@ -23,6 +23,7 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "@nexys/svg": "^1.0.5",
     "@types/react-router-dom": "^5.1.7",
     "react-router-dom": "^5.2.0"
   }
