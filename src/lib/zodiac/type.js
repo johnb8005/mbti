@@ -33,3 +33,16 @@ export var Season;
   Season2[Season2["Fall"] = 2] = "Fall";
   Season2[Season2["Winter"] = 3] = "Winter";
 })(Season || (Season = {}));
+export var Planet;
+(function(Planet2) {
+  Planet2[Planet2["Sun"] = 0] = "Sun";
+  Planet2[Planet2["Moon"] = 1] = "Moon";
+  Planet2[Planet2["Mercury"] = 2] = "Mercury";
+  Planet2[Planet2["Venus"] = 3] = "Venus";
+  Planet2[Planet2["Mars"] = 4] = "Mars";
+  Planet2[Planet2["Jupiter"] = 5] = "Jupiter";
+  Planet2[Planet2["Saturn"] = 6] = "Saturn";
+  Planet2[Planet2["Uranus"] = 7] = "Uranus";
+  Planet2[Planet2["Neptune"] = 8] = "Neptune";
+  Planet2[Planet2["Pluto"] = 9] = "Pluto";
+})(Planet || (Planet = {}));

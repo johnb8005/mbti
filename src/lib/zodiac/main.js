@@ -103,3 +103,29 @@ export const toTwins = (z) => {
 export const formatTwins = ([t1, t2]) => {
   return T.ZodiacSign[t1] + " " + T.ZodiacSign[t2];
 };
+export const zodiacToPlanet = (z) => {
+  switch (z) {
+    case T.ZodiacSign.Aries:
+      return T.Planet.Mars;
+    case T.ZodiacSign.Taurus:
+    case T.ZodiacSign.Libra:
+      return T.Planet.Venus;
+    case T.ZodiacSign.Gemini:
+    case T.ZodiacSign.Virgo:
+      return T.Planet.Mercury;
+    case T.ZodiacSign.Cancer:
+      return T.Planet.Moon;
+    case T.ZodiacSign.Leo:
+      return T.Planet.Sun;
+    case T.ZodiacSign.Scorpio:
+      return T.Planet.Pluto;
+    case T.ZodiacSign.Sagittarius:
+      return T.Planet.Jupiter;
+    case T.ZodiacSign.Capricorn:
+      return T.Planet.Saturn;
+    case T.ZodiacSign.Aquarius:
+      return T.Planet.Uranus;
+    case T.ZodiacSign.Pisces:
+      return T.Planet.Neptune;
+  }
+};
