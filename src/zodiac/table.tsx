@@ -21,6 +21,7 @@ export default () => (
         <th>Southern Season</th>
         <th>Opposite</th>
         <th>Twins</th>
+        <th>Planet</th>
       </tr>
     </thead>
     <tbody>
@@ -41,6 +42,7 @@ export default () => (
             <td>{T.Season[(Z.toSeason(z) + 2) % 3]}</td>
             <td>{T.ZodiacSign[Z.toOpposite(z)]}</td>
             <td>{Z.formatTwins(Z.toTwins(z))}</td>
+            <td>{T.Planet[Z.zodiacToPlanet(z)]}</td>
           </tr>
         );
       })}
