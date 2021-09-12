@@ -28,7 +28,11 @@ const Content = ({mbtiId}) => {
     href: "https://en.wikipedia.org/wiki/Jungian_cognitive_functions#Isabel_Myers"
   }, /* @__PURE__ */ React.createElement("i", {
     className: "fa fa-link"
-  })))), /* @__PURE__ */ React.createElement("h5", null, "Romantic Partners"), /* @__PURE__ */ React.createElement("ul", {
+  })))), /* @__PURE__ */ React.createElement("h5", null, "Income potential"), /* @__PURE__ */ React.createElement(Link, {
+    to: "/income"
+  }, "See here"), /* @__PURE__ */ React.createElement("h5", null, "IQ"), /* @__PURE__ */ React.createElement(Link, {
+    to: "/iq"
+  }, "See here"), /* @__PURE__ */ React.createElement("h5", null, "(Romantic) Partners"), /* @__PURE__ */ React.createElement("ul", {
     className: "list-group"
   }, U.findRomanticPartners(cps).map((x) => /* @__PURE__ */ React.createElement(UIUtils.PersonalitySmallRow, {
     mbti: U.fromComponent(x)

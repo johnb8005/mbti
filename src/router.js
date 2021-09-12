@@ -8,6 +8,8 @@ import Detail from "./detail/index.js";
 import Layout from "./layout/index.js";
 import {links} from "./link.js";
 import Zodiac from "./zodiac/index.js";
+import Income from "./income.js";
+import Iq from "./iq.js";
 const basename = __SNOWPACK_ENV__.SNOWPACK_PUBLIC_URL;
 const NotFound = () => /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("i", null, "Page Not Found"));
 export default () => {
@@ -24,6 +26,12 @@ export default () => {
   }), /* @__PURE__ */ React.createElement(Route, {
     path: "/:mbti/detail",
     component: Detail
+  }), /* @__PURE__ */ React.createElement(Route, {
+    path: "/income",
+    component: Income
+  }), /* @__PURE__ */ React.createElement(Route, {
+    path: "/iq",
+    component: Iq
   }), /* @__PURE__ */ React.createElement(Route, {
     path: links.zodiac.link,
     component: Zodiac
