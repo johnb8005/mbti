@@ -56,7 +56,15 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
         </small>
       </p>
 
-      <h5>Romantic Partners</h5>
+      <h5>Income potential</h5>
+
+      <Link to={"/income"}>See here</Link>
+
+      <h5>IQ</h5>
+
+      <Link to={"/iq"}>See here</Link>
+
+      <h5>(Romantic) Partners</h5>
 
       <ul className="list-group">
         {U.findRomanticPartners(cps).map((x) => (

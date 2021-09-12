@@ -9,6 +9,9 @@ import { links } from "./link";
 
 import Zodiac from "./zodiac";
 
+import Income from "./income";
+import Iq from "./iq";
+
 const basename = import.meta.env.SNOWPACK_PUBLIC_URL;
 
 const NotFound = () => (
@@ -25,6 +28,8 @@ export default () => {
           <Route exact path={"/"} component={Home} />
           <Route exact path={links.mbti.link} component={Home} />
           <Route path={"/:mbti/detail"} component={Detail} />
+          <Route path={"/income"} component={Income} />
+          <Route path={"/iq"} component={Iq} />
           <Route path={links.zodiac.link} component={Zodiac} />
           <Route component={NotFound} />
         </Switch>
