@@ -499,6 +499,20 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@nexys/svg@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@nexys/svg/-/svg-1.0.5.tgz#f3f4ef6486f1b36f02feb16a08cb3d3e8072c05b"
+  integrity sha512-EzcTnrR3dwgaMgP20kYjF2wzFZ168/1bmUFncjJKLw1S8y3NivR1L7yB1BaxtREVO0jiEP9oNdaPswXNvKDHGA==
+  dependencies:
+    "@types/react" "^17.0.3"
+    "@types/react-dom" "^17.0.3"
+    "@types/react-router" "^5.1.13"
+    "@types/react-router-dom" "^5.1.7"
+    react "^17.0.2"
+    react-dom "^17.0.2"
+    react-router-dom "^5.2.0"
+    snowpack "^3.2.2"
+
 "@npmcli/git@^2.0.1":
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/@npmcli/git/-/git-2.0.9.tgz#915bbfe66300e67b4da5ef765a4475ffb2ca5b6b"
@@ -671,6 +685,13 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
+"@types/react-dom@^17.0.3":
+  version "17.0.8"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.8.tgz#3180de6d79bf53762001ad854e3ce49f36dd71fc"
+  integrity sha512-0ohAiJAx1DAUEcY9UopnfwCE9sSMDGnY/oXjWMax6g3RpzmTt2GMyMVAXcbn0mo8XAff0SbQJl2/SBU+hjSZ1A==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-dom@^17.0.5":
   version "17.0.5"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.5.tgz#df44eed5b8d9e0b13bb0cd38e0ea6572a1231227"
@@ -695,10 +716,27 @@
     "@types/history" "*"
     "@types/react" "*"
 
+"@types/react-router@^5.1.13":
+  version "5.1.15"
+  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-5.1.15.tgz#c1069e0da4617fd315e381b56b18b89490e14e2a"
+  integrity sha512-z3UlMG/x91SFEVmmvykk9FLTliDvfdIUky4k2rCfXWQ0NKbrP8o9BTCaCTPuYsB8gDkUnUmkcA2vYlm2DR+HAA==
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^17.0.6":
   version "17.0.6"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.6.tgz#0ec564566302c562bf497d73219797a5e0297013"
   integrity sha512-u/TtPoF/hrvb63LdukET6ncaplYsvCvmkceasx8oG84/ZCsoLxz9Z/raPBP4lTAiWW1Jb889Y9svHmv8R26dWw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.3":
+  version "17.0.11"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.11.tgz#67fcd0ddbf5a0b083a0f94e926c7d63f3b836451"
+  integrity sha512-yFRQbD+whVonItSk7ZzP/L+gPTJVBkL/7shLEF+i9GC/1cV3JmUxEQz6+9ylhUpWSDuqo1N9qEvqS6vTj4USUA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -4083,6 +4121,23 @@ snapdragon@^0.8.1:
     source-map "^0.5.6"
     source-map-resolve "^0.5.0"
     use "^3.1.0"
+
+snowpack@^3.2.2:
+  version "3.5.9"
+  resolved "https://registry.yarnpkg.com/snowpack/-/snowpack-3.5.9.tgz#c374c6b8633ec5baf8311adc964238edeea67b3b"
+  integrity sha512-Rajenx5DRDiMKC+GiU1vMP+tcjge9bAe35fGsPdhkTtIwRkV3u4he1TfiwTh8F1hcOcG5IzLe8jqGM9sBANtpw==
+  dependencies:
+    cli-spinners "^2.5.0"
+    default-browser-id "^2.0.0"
+    esbuild "^0.9.3"
+    fdir "^5.0.0"
+    open "^7.0.4"
+    pacote "^11.3.1"
+    picomatch "^2.2.2"
+    resolve "^1.20.0"
+    rollup "~2.37.1"
+  optionalDependencies:
+    fsevents "^2.2.0"
 
 snowpack@^3.5.0:
   version "3.5.0"

@@ -30,6 +30,13 @@ export enum MBTI {
   ISTP,
 }
 
+// (attempt at) mapping MBTI to Big five
+//  Attitude - extroversion
+//  Function 1 - Openness
+//  Function 2 - Agreeableness
+//  Lifestyle - conscientiousness
+//  T/A - neuroticism
+
 export enum Attitude {
   E,
   I,

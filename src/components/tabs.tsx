@@ -12,7 +12,7 @@ const Nav =
     (
       <ul className="nav nav-tabs">
         {navs.map((nav, i) => (
-          <li className="nav-item">
+          <li key={i} className="nav-item">
             <a
               onClick={() => onClick(i)}
               className={`nav-link ${i === option ? "active" : ""}`}
