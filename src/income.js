@@ -26,10 +26,10 @@ export default () => {
   }), /* @__PURE__ */ React.createElement("h4", null, "Percentage of Each Type Earning $150k+ (Respondants Age 30-59)"), /* @__PURE__ */ React.createElement(Chart, {
     labels,
     data: above150
-  }), /* @__PURE__ */ React.createElement("h4", null, "Percentage of Each Type Earning $150k+ (Respondants Age 21+)"), /* @__PURE__ */ React.createElement(Chart, {
+  }), /* @__PURE__ */ React.createElement("h4", null, "Percentage of Each Type Earning less than $15k (Respondants Age 21+)"), /* @__PURE__ */ React.createElement(Chart, {
     labels,
     data: below150
-  }), /* @__PURE__ */ React.createElement("h4", null, "Percentage of Each Type Earning $150k+ (Respondants Age 21+)"), /* @__PURE__ */ React.createElement(ChartGrouped, {
+  }), /* @__PURE__ */ React.createElement("h4", null, "Income by age bracket"), /* @__PURE__ */ React.createElement(ChartGrouped, {
     labels,
     datasets: getIncomeByAgeBracket()
   }));
