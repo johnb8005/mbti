@@ -36,9 +36,11 @@ export default () => {
       <Chart labels={labels} data={incomes} />
       <h4>Percentage of Each Type Earning $150k+ (Respondants Age 30-59)</h4>
       <Chart labels={labels} data={above150} />
-      <h4>Percentage of Each Type Earning $150k+ (Respondants Age 21+)</h4>
+      <h4>
+        Percentage of Each Type Earning less than $15k (Respondants Age 21+)
+      </h4>
       <Chart labels={labels} data={below150} />
-      <h4>Percentage of Each Type Earning $150k+ (Respondants Age 21+)</h4>
+      <h4>Income by age bracket</h4>
       <ChartGrouped labels={labels} datasets={getIncomeByAgeBracket()} />
     </>
   );

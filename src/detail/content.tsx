@@ -58,11 +58,25 @@ const Content = ({ mbtiId }: { mbtiId: T.MBTI }) => {
 
       <h5>Income potential</h5>
 
-      <Link to={"/income"}>See here</Link>
+      <p>
+        <small>
+          see&nbsp;
+          <Link to={"/income"}>
+            <i className="fa fa-link" />
+          </Link>
+        </small>
+      </p>
 
       <h5>IQ</h5>
 
-      <Link to={"/iq"}>See here</Link>
+      <p>
+        <small>
+          see&nbsp;
+          <Link to={"/iq"}>
+            <i className="fa fa-link" />
+          </Link>
+        </small>
+      </p>
 
       <h5>(Romantic) Partners</h5>
 
